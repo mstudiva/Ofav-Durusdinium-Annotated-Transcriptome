@@ -1,5 +1,5 @@
 # Transcriptome Annotation, version May 21, 2021
-# Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (studivanms@gmail.com)
+# Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (studivanms@gmail.com) for use on FAU's HPC (KoKo)
 # for use in generating transcriptome annotation files for Orbicella faveolata
 # also includes the concatention of O. faveolata and Durusdinium transcriptomes
 
@@ -148,7 +148,7 @@ cat Ofaveolata_Durusdinium_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | 
 fasta2SBH_MS.pl Ofaveolata_Durusdinium_iso_PRO.fas >Ofaveolata_Durusdinium_out_PRO.fas
 
 # scp your *_out_PRO.fas file to laptop, submit it to
-http://eggnogdb.embl.de/#/app/emapper
+http://eggnog-mapper.embl.de
 cd /path/to/local/directory
 scp username@koko-login.fau.edu:~/path/to/HPC/directory/*_out_PRO.fas .
 
@@ -177,17 +177,16 @@ awk 'BEGIN {FS=OFS="\t"} NR==FNR {a[$1] = $2;next} {print $1,a[$2]}' kog_classes
 # KEGG annotations:
 
 # selecting the longest contig per isogroup:
-fasta2SBH_MS.pl Ofaveolata_Durusdinium_iso.fasta >Ofaveolata_Durusdinium_4kegg.fasta
+srun fasta2SBH_MS.pl Ofaveolata_Durusdinium_iso.fasta >Ofaveolata_Durusdinium_4kegg.fasta
 
 # scp Ofaveolata_Durusdinium_4kegg.fasta to your laptop
 cd /path/to/local/directory
 scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/Ofaveolata_Durusdinium_4kegg.fasta .
 # use web browser to submit Ofaveolata_Durusdinium_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
 # select SBH method, upload nucleotide query
-# Once it is done, download the 'text' output from KAAS, name it query.ko (default)
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1556130193&key=KCa76L0E
+# Once it is done, download to HPC - it is named query.ko by default
 
-wget https://www.genome.jp/tools/kaas/files/dl/1556130193/query.ko
+wget https://www.genome.jp/tools/kaas/files/dl/1621975589/query.ko
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > Ofaveolata_Durusdinium_iso2kegg.tab
