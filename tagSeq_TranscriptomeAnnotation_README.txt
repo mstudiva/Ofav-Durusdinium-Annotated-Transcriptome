@@ -53,7 +53,7 @@ mv 102_symbd_transcriptome_nucl.fa Durusdinium.fasta
 
 # use the stream editor to find and replace all instances of "comp" with "Ofaveolata" in the host transcriptome, and "TRINITY" with "Durusdinium" in the symbiont transcriptome
 sed -i 's/comp/Ofaveolata/g' Ofaveolata.fasta
-sed -i 's/TRINITY/Durusdinium/g' Durusdinium.fasta
+sed -i 's/TRINITY_DN/Durusdinium/g' Durusdinium.fasta
 
 # concatenate the host and symbiont transcriptomes into a holobiont transcriptome
 cat Durusdinium.fasta Ofaveolata.fasta > Ofaveolata_Durusdinium.fasta
@@ -97,10 +97,10 @@ echo "makeblastdb -in uniprot_sprot.fasta -dbtype prot" >mdb
 launcher_creator.py -j mdb -n mdb -q shortq7 -t 6:00:00 -e email@gmail.com
 sbatch mdb.slurm
 
-# splitting the transcriptome into 190 chunks
-splitFasta.pl Ofaveolata_Durusdinium.fasta 190
+# splitting the transcriptome into 200 chunks
+splitFasta.pl Ofaveolata_Durusdinium.fasta 200
 
-# blasting all 190 chunks to uniprot in parallel, 4 cores per chunk
+# blasting all 200 chunks to uniprot in parallel, 4 cores per chunk
 ls subset* | perl -pe 's/^(\S+)$/blastx -query $1 -db uniprot_sprot\.fasta -evalue 0\.0001 -num_threads 4 -num_descriptions 5 -num_alignments 5 -out $1.br/'>bl
 launcher_creator.py -j bl -n blast -t 6:00:00 -q shortq7 -e email@gmail.com
 sbatch blast.slurm
@@ -120,7 +120,7 @@ cat Ofaveolata_Durusdinium.fasta | perl -pe 's/>Durusdinium(\d+)(\S+).+/>Durusdi
 #-------------------------
 # extracting coding sequences and corresponding protein translations:
 echo "perl ~/bin/CDS_extractor_v2.pl Ofaveolata_Durusdinium_iso.fasta myblast.br allhits bridgegaps" >cds
-launcher_creator.py -j cds -n cds -l cddd -t 6:00:00 -q shortq7 -e studivanms@gmail.com
+launcher_creator.py -j cds -n cds -l cddd -t 6:00:00 -q shortq7 -e email@gmail.com
 sbatch cddd
 
 # calculating contiguity:
@@ -145,22 +145,22 @@ cat Ofaveolata_Durusdinium_248.brtab | perl -pe 's/.+(KOG\d+)\s.+/$1/' | uniq | 
 # updated based on Misha Matz's new GO and KOG annotation steps on github: https://github.com/z0on/emapper_to_GOMWU_KOGMWU
 
 # selecting the longest contig per isogroup (also renames using isogroups based on Ofaveolata and Durusdinium annotations):
-fasta2SBH_MS.pl Ofaveolata_Durusdinium_iso_PRO.fas >Ofaveolata_Durusdinium_out_PRO.fas
+fasta2SBH_Ofav.pl Ofaveolata_Durusdinium_iso_PRO.fas >Ofaveolata_Durusdinium_out_PRO.fas
 
 # scp your *_out_PRO.fas file to laptop, submit it to
 http://eggnog-mapper.embl.de
 cd /path/to/local/directory
-scp username@koko-login.fau.edu:~/path/to/HPC/directory/*_out_PRO.fas .
+scp username@koko-login.hpc.fau.edu:~/path/to/HPC/directory/*_out_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
-# check status: go on web to http://eggnog5.embl.de/#/app/emapper?jobname=MM_GTGUpy
+# check status: go on web to http://eggnog-mapper.embl.de/job_status?jobname=MM_99vdapsg
 # once it is done, download results to HPC:
-wget http://eggnogdb.embl.de/MM_w4_mOZ/Ofaveolata_Durusdinium_out_PRO.fas.emapper.annotations
+wget http://eggnog-mapper.embl.de/MM_99vdapsg/query_seqs.fa.emapper.annotations
 
 # GO:
-awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$6 }' Ofaveolata_Durusdinium_out_PRO.fas.emapper.annotations | grep GO | perl -pe 's/,/;/g' >Ofaveolata_Durusdinium_iso2go.tab
+awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$7 }' query_seqs.fa.emapper.annotations | grep GO | perl -pe 's/,/;/g' >Ofaveolata_Durusdinium_iso2go.tab
 # gene names:
-awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$13 }' Ofaveolata_Durusdinium_out_PRO.fas.emapper.annotations | grep -Ev "\tNA" >Ofaveolata_Durusdinium_iso2geneName.tab
+awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$22 }' query_seqs.fa.emapper.annotations | grep -Ev "\tNA" >Ofaveolata_Durusdinium_iso2geneName.tab
 
 #------------------------------
 # KOG annotation
@@ -169,7 +169,7 @@ awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$13 }' Ofaveolata_Durusdinium_out_PRO.fa
 cp ~/bin/kog_classes.txt .
 
 #  KOG classes (single-letter):
-awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$12 }' Ofaveolata_Durusdinium_out_PRO.fas.emapper.annotations | grep -Ev "[,#S]" >Ofaveolata_Durusdinium_iso2kogClass1.tab
+awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$21 }' query_seqs.fa.emapper.annotations | grep -Ev "[,#S]" >Ofaveolata_Durusdinium_iso2kogClass1.tab
 # converting single-letter KOG classes to text understood by KOGMWU package (must have kog_classes.txt file in the same dir):
 awk 'BEGIN {FS=OFS="\t"} NR==FNR {a[$1] = $2;next} {print $1,a[$2]}' kog_classes.txt Ofaveolata_Durusdinium_iso2kogClass1.tab > Ofaveolata_Durusdinium_iso2kogClass.tab
 
@@ -181,12 +181,13 @@ srun fasta2SBH_MS.pl Ofaveolata_Durusdinium_iso.fasta >Ofaveolata_Durusdinium_4k
 
 # scp Ofaveolata_Durusdinium_4kegg.fasta to your laptop
 cd /path/to/local/directory
-scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/Ofaveolata_Durusdinium_4kegg.fasta .
+scp mstudiva@koko-login.hpc.fau.edu:~/path/to/HPC/directory/Ofaveolata_Durusdinium_4kegg.fasta .
 # use web browser to submit Ofaveolata_Durusdinium_4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
 # select SBH method, upload nucleotide query
-# Once it is done, download to HPC - it is named query.ko by default
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1622161920&key=qsNLioKq
 
-wget https://www.genome.jp/tools/kaas/files/dl/1621975589/query.ko
+# Once it is done, download to HPC - it is named query.ko by default
+wget https://www.genome.jp/tools/kaas/files/dl/1622161920/query.ko
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > Ofaveolata_Durusdinium_iso2kegg.tab
