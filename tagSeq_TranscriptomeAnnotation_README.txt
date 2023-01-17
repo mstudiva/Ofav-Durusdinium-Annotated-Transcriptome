@@ -1,6 +1,5 @@
-# Transcriptome Annotation, version January 5, 2023
+# Orbicella faveolata and Durusdinium Transcriptome Annotation, version January 11, 2023
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (@gmail.com) for use on FAU's HPC (KoKo)
-# for use in generating transcriptome annotations for Orbicella faveolata and Durusdinium
 
 
 #------------------------------
@@ -66,6 +65,8 @@ mv 102_symbd_transcriptome_nucl.fa Durusdinium.fasta
 # download from https://osf.io/gsn8p/ and scp to your annotate directory
 mv D1a.annotated.fa Durusdinium.fasta
 sed -i 's/TRINITY_DN/Durusdinium/g' Durusdinium.fasta
+
+# 
 
 # transcriptome statistics
 conda activate bioperl
