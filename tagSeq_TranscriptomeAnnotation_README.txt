@@ -66,7 +66,10 @@ mv 102_symbd_transcriptome_nucl.fa Durusdinium.fasta
 mv D1a.annotated.fa Durusdinium.fasta
 sed -i 's/TRINITY_DN/Durusdinium/g' Durusdinium.fasta
 
-# 
+# Ladner (Feb 2013)
+# from https://www.ncbi.nlm.nih.gov/Traces/wgs/?val=GAFP01
+gunzip GAFP01.1.fsa_nt.gz
+mv GAFP01.1.fsa_nt Durusdinium.fasta
 
 # transcriptome statistics
 conda activate bioperl
