@@ -1,4 +1,4 @@
-# Orbicella faveolata and Durusdinium Transcriptome Annotation, version January 11, 2023
+# Orbicella faveolata and Durusdinium Transcriptome Annotation, version January 25, 2023
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (@gmail.com) for use on FAU's HPC (KoKo)
 
 
@@ -48,11 +48,31 @@ cd annotate
 #------------------------------
 # getting transcriptomes
 
-# O. faveolata (April 2015)
-wget https://www.dropbox.com/s/0o5ntnlymyyhzkp/Ofaveolata_transcriptome.fasta
-mv Ofaveolata_transcriptome.fasta Ofaveolata.fasta
+# Orbicella faveolata (Pinzon; April 2015)
+# used to be available at http://montastraea.psu.edu/genome, now just on my Google Drive at https://drive.google.com/file/d/1zDM5uTvhLl_c-w5dUlfyKcQ0MzbV5xRz/view?usp=sharing
 
+# O. faveolata (Anderson; July 2015)
+# download from https://dfzljdn9uc3pi.cloudfront.net/2016/1616/1/SI_4a_coral_assembly.fasta.zip and scp to your annotate directory
+mv SI\ 2\ coral\ assembly.fasta Ofaveolata.fasta
 # use the stream editor to find and replace all instances of component designations with the species name
+sed -i 's/comp/Ofaveolata/g' Ofaveolata.fasta
+
+# O. faveolata (Prada; March 2016)
+# download genom and transcriptome from https://www.ncbi.nlm.nih.gov/data-hub/genome/GCF_002042975.1/
+mv rna.fna Ofaveolata.fasta
+sed -i 's/XM_/Ofaveolata/g' Ofaveolata.fasta
+
+# O. faveolata (Avila-Magana; August 2021)
+# from https://datadryad.org/stash/dataset/doi:10.5061/dryad.k3j9kd57b
+gunzip Orb08_Host.fna.gz
+mv Orb08_Host.fna Ofaveolata.fasta
+sed -i 's/TRINITY_DN/Ofaveolata/g' Ofaveolata.fasta
+
+# MacKnight (September 2022)
+# from https://www.science.org/doi/full/10.1126/sciadv.abo6153
+# uses fast-x toolkit to wrap each line to 60 characters
+module load fastx-toolkit-0.0.14-gcc-8.3.0-ombppo2
+srun fasta_formatter -i Longest_Ofav_ProcB.fasta -w 60 -o Ofaveolata.fasta
 sed -i 's/comp/Ofaveolata/g' Ofaveolata.fasta
 
 # Durusdinium (Shoguchi; November 2020)
@@ -60,16 +80,19 @@ wget https://marinegenomics.oist.jp/symbd/download/102_symbd_transcriptome_nucl.
 gzip -d 102_symbd_transcriptome_nucl.fa.gz
 mv 102_symbd_transcriptome_nucl.fa Durusdinium.fasta
 
-# Camp (June 2021)
+# Durusdinium (Camp; June 2021)
 # this transcriptome has already been converted to protein translations, so skip to line 168
 # download from https://osf.io/gsn8p/ and scp to your annotate directory
 mv D1a.annotated.fa Durusdinium.fasta
 sed -i 's/TRINITY_DN/Durusdinium/g' Durusdinium.fasta
 
-# Ladner (Feb 2013)
+# Durusdinium (Ladner; Feb 2013)
 # from https://www.ncbi.nlm.nih.gov/Traces/wgs/?val=GAFP01
 gunzip GAFP01.1.fsa_nt.gz
 mv GAFP01.1.fsa_nt Durusdinium.fasta
+
+# Test each of the transcriptomes on a subset of our sequenced samples, and pick the one with the best alignment rates
+# See repository mstudiva/tag-based_RNAseq/tagSeq_processing_README.txt, L164-168 for details
 
 # transcriptome statistics
 conda activate bioperl
@@ -78,9 +101,7 @@ echo "seq_stats.pl Durusdinium.fasta > seqstats_Durusdinium.txt" >> seq_stats
 launcher_creator.py -j seq_stats -n seq_stats -q shortq7 -t 6:00:00 -e studivanms@gmail.com
 sbatch seq_stats.slurm
 
-nano seqstats_Ofaveolata.txt
-
-Ofaveolata.fasta
+Ofaveolata.fasta (Pinzon)
 -------------------------
 178943 sequences.
 1100 average length.
@@ -91,8 +112,6 @@ N50 = 2218
 0 ambiguous Mb. (0 bp, 0%)
 0 Mb of Ns. (0 bp, 0%)
 -------------------------
-
-nano seqstats_Durusdinium.txt
 
 Durusdinium.fasta (Shoguchi)
 -------------------------
