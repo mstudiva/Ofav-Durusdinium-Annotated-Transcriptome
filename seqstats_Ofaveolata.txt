@@ -1,0 +1,13 @@
+
+Ofaveolata.fasta
+-------------------------
+913821 sequences.
+622 average length.
+3755 maximum length.
+201 minimum length.
+N50 = 920
+568.6 Mb altogether (568618362 bp).
+0 ambiguous Mb. (0 bp, 0%)
+0 Mb of Ns. (0 bp, 0%)
+-------------------------
+

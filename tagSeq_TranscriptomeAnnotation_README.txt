@@ -101,14 +101,14 @@ echo "seq_stats.pl Durusdinium.fasta > seqstats_Durusdinium.txt" >> seq_stats
 launcher_creator.py -j seq_stats -n seq_stats -q shortq7 -t 6:00:00 -e studivanms@gmail.com
 sbatch seq_stats.slurm
 
-Ofaveolata.fasta (Pinzon)
+Ofaveolata.fasta (Avila-Magana)
 -------------------------
-178943 sequences.
-1100 average length.
-38110 maximum length.
+913821 sequences.
+622 average length.
+3755 maximum length.
 201 minimum length.
-N50 = 2218
-196.8 Mb altogether (196757464 bp).
+N50 = 920
+568.6 Mb altogether (568618362 bp).
 0 ambiguous Mb. (0 bp, 0%)
 0 Mb of Ns. (0 bp, 0%)
 -------------------------
@@ -125,18 +125,6 @@ N50 = 1624
 0 Mb of Ns. (0 bp, 0%)
 -------------------------
 
-Durusdinium.fasta (Camp)
--------------------------
-141325 sequences.
-303 average length.
-5819 maximum length.
-99 minimum length.
-N50 = 440
-42.8 Mb altogether (42825691 bp).
-32.5 ambiguous Mb. (32475004 bp, 75.8%)
-1.1 Mb of Ns. (1069951 bp, 2.5%)
--------------------------
-
 
 #------------------------------
 # uniprot annotations with blast
@@ -148,6 +136,7 @@ wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/c
 gunzip uniprot_sprot.fasta.gz &
 
 # indexing the fasta database
+module load blast-plus-2.11.0-gcc-9.2.0-5tzbbls
 echo "makeblastdb -in uniprot_sprot.fasta -dbtype prot" >mdb
 launcher_creator.py -j mdb -n mdb -q shortq7 -t 6:00:00 -e studivanms@gmail.com
 sbatch mdb.slurm
@@ -167,11 +156,11 @@ grep "Query= " subset*.br | wc -l
 
 # combining all blast results
 cat subset*br > myblast.br
-mv subset* ~/annotate/backup/
+rm subset*
 
 # for trinity-assembled transcriptomes: annotating with isogroups
-grep ">" Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)(\S+)\s.+/Ofaveolata$1$2\tOfaveolata$1/'>Ofaveolata_seq2iso.tab
-cat Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)(\S+).+/>Ofaveolata$1$2 gene=Ofaveolata$1/'>Ofaveolata_iso.fasta
+grep ">" Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)(\S+).+/Ofaveolata$1$2\tOfaveolata$1/'>Ofaveolata_seq2iso.tab
+cat Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)(\S+)/>Ofaveolata$1$2 gene=Ofaveolata$1/'>Ofaveolata_iso.fasta
 
 grep ">" Durusdinium.fasta | perl -pe 's/>Durusdinium(\d+)(\S+)\s.+/Durusdinium$1$2\tDurusdinium$1/' > Durusdinium_seq2iso.tab
 cat Durusdinium.fasta | perl -pe 's/>Durusdinium(\d+)(\S+).+/>Durusdinium$1$2 gene=Durusdinium$1/' > Durusdinium_iso.fasta
@@ -179,6 +168,7 @@ cat Durusdinium.fasta | perl -pe 's/>Durusdinium(\d+)(\S+).+/>Durusdinium$1$2 ge
 
 #-------------------------
 # extracting coding sequences and corresponding protein translations:
+conda activate bioperl # if not active already
 echo "perl ~/bin/CDS_extractor_v2.pl Ofaveolata_iso.fasta myblast.br allhits bridgegaps" >cds
 launcher_creator.py -j cds -n cds -l cddd -t 6:00:00 -q shortq7 -e studivanms@gmail.com
 sbatch cddd
@@ -206,12 +196,12 @@ cd /path/to/local/directory
 scp mstudiva@koko-login.hpc.fau.edu:~/path/to/HPC/directory/*_out_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
-# Ofav status: http://eggnog-mapper.embl.de/job_status?jobname=MM_hsd55r5q
-# symD (Shoguchi) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_0wv3wp7j
-# symD (Camp) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_4k2u3yoh
+# O. faveolata (Magana) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_1zhh04dh
+# Durusdinium (Shoguchi) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_0wv3wp7j
+# Durusdinium (Camp) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_4k2u3yoh
 
 # once it is done, download results to HPC:
-wget http://eggnog-mapper.embl.de/MM_hsd55r5q/out.emapper.annotations
+wget http://eggnog-mapper.embl.de/MM_1zhh04dh/out.emapper.annotations # O. faveolata (Magana)
 wget http://eggnog-mapper.embl.de/MM_0wv3wp7j/out.emapper.annotations # Durusdinium (Shoguchi)
 wget http://eggnog-mapper.embl.de/MM_4k2u3yoh/out.emapper.annotations # Durusdinium (Camp)
 
@@ -251,14 +241,14 @@ srun fasta2SBH.pl Durusdinium_iso.fasta >Durusdinium_4kegg.fasta
 # scp *4kegg.fasta to your laptop
 cd /path/to/local/directory
 scp mstudiva@koko-login.hpc.fau.edu:~/path/to/HPC/directory/*4kegg.fasta .
-# use web browser to submit _4kegg.fasta file to KEGG's KAAS server ( http://www.genome.jp/kegg/kaas/ )
+# use web browser to submit _4kegg.fasta file to KEGG's KAAS server (http://www.genome.jp/kegg/kaas/)
 # select SBH method, upload nucleotide query
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1636053354&key=MYtZ30dV # Ofav
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1672974031&key=SQHqJU5a # symD (Shoguchi)
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1673036132&key=n9SFDxIG # symD (Camp)
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1674780256&key=DqBRWgLo # O. faveolata (Magana)
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1672974031&key=SQHqJU5a # Durusdinium (Shoguchi)
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1673036132&key=n9SFDxIG # Durusdinium (Camp)
 
 # Once it is done, download to HPC - it is named query.ko by default
-wget https://www.genome.jp/tools/kaas/files/dl/1636053354/query.ko # Ofav
+wget https://www.genome.jp/tools/kaas/files/dl/1674780256/query.ko # O. faveolata (Magana)
 wget https://www.genome.jp/tools/kaas/files/dl/1672974031/query.ko # Durusdinium (Shoguchi)
 wget https://www.genome.jp/tools/kaas/files/dl/1673036132/query.ko # Durusdinium (Shoguchi)
 
