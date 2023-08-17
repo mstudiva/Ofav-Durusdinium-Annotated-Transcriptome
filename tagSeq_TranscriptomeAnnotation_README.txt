@@ -77,7 +77,7 @@ sed -i 's/comp/Ofaveolata/g' Ofaveolata.fasta
 
 # O. faveolata (Young; March 2023)
 mv hq_transcripts.fasta Ofaveolata.fasta
-sed -i 's/!a_HQ_transcript/!Ofaveolata!g' Ofaveolata.fasta
+sed -i 's/QW917_/Ofaveolata/g' Ofaveolata.fasta
 
 # Durusdinium (Shoguchi; November 2020)
 wget https://marinegenomics.oist.jp/symbd/download/102_symbd_transcriptome_nucl.fa.gz
