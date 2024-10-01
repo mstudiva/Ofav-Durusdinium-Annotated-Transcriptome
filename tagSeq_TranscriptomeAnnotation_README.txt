@@ -1,4 +1,4 @@
-# Orbicella faveolata and Durusdinium Transcriptome Annotation, version August 15, 2023
+# Orbicella faveolata and Durusdinium Transcriptome Annotation, version September 30, 2024
 # Created by Misha Matz (matz@utexas.edu), modified by Michael Studivan (@gmail.com) for use on FAU's HPC (KoKo)
 
 
@@ -75,7 +75,7 @@ module load fastx-toolkit-0.0.14-gcc-8.3.0-ombppo2
 srun fasta_formatter -i Longest_Ofav_ProcB.fasta -w 60 -o Ofaveolata.fasta
 sed -i 's/comp/Ofaveolata/g' Ofaveolata.fasta
 
-# O. faveolata (Young; March 2023)
+# O. faveolata (Young; May 2023)
 mv hq_transcripts.fasta Ofaveolata.fasta
 sed -i 's/QW917_/Ofaveolata/g' Ofaveolata.fasta
 
@@ -146,7 +146,7 @@ launcher_creator.py -j mdb -n mdb -q shortq7 -t 6:00:00 -e studivanms@gmail.com
 sbatch mdb.slurm
 
 # splitting the transcriptome into 200 chunks, or however many is needed to keep the number of seqs per chunk under 1000
-splitFasta.pl Ofaveolata.fasta 200
+splitFasta.pl Ofaveolata.fasta 50
 splitFasta.pl Durusdinium.fasta 200
 
 # blasting all 200 chunks to uniprot in parallel, 4 cores per chunk
@@ -161,10 +161,6 @@ grep "Query= " subset*.br | wc -l
 # combining all blast results
 cat subset*br > myblast.br
 rm subset*
-
-# for IsoSeq-assembled transcriptomes: creating isogroup lookups
-# grep ">" Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)+/Ofaveolata$1\tOfaveolata$1/'>Ofaveolata_seq2iso.tab
-# cat Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)/>Ofaveolata$1 gene=Ofaveolata$1/'>Ofaveolata_iso.fasta
 
 # creating isogroup lookups
 grep ">" Ofaveolata.fasta | perl -pe 's/>Ofaveolata(\d+)(\S+).+/Ofaveolata$1$2\tOfaveolata$1/'>Ofaveolata_seq2iso.tab
@@ -201,12 +197,12 @@ cd /path/to/local/directory
 scp mstudiva@koko-login.hpc.fau.edu:~/path/to/HPC/directory/\*_out_PRO.fas .
 
 # copy link to job ID status and output file, paste it below instead of current link:
-# O. faveolata (Young) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_2yp8wp2b
-# Durusdinium (Shoguchi) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_0wv3wp7j
+# O. faveolata (Young) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_jhxmcnr6
+# Durusdinium (Shoguchi) status: http://eggnog-mapper.embl.de/job_status?jobname=MM_8i8imc8h
 
 # once it is done, download results to HPC:
-wget http://eggnog-mapper.embl.de/MM_2yp8wp2b/out.emapper.annotations # O. faveolata (Young)
-wget http://eggnog-mapper.embl.de/MM_0wv3wp7j/out.emapper.annotations # Durusdinium (Shoguchi)
+wget http://eggnog-mapper.embl.de/MM_jhxmcnr6/out.emapper.annotations # O. faveolata (Young)
+wget http://eggnog-mapper.embl.de/MM_8i8imc8h/out.emapper.annotations # Durusdinium (Shoguchi)
 
 # GO:
 awk -F "\t" 'BEGIN {OFS="\t" }{print $1,$10 }' out.emapper.annotations | grep GO | perl -pe 's/,/;/g' >Ofaveolata_iso2go.tab
@@ -246,12 +242,12 @@ cd /path/to/local/directory
 scp mstudiva@koko-login.hpc.fau.edu:~/path/to/HPC/directory/\*4kegg.fasta .
 # use web browser to submit _4kegg.fasta file to KEGG's KAAS server (http://www.genome.jp/kegg/kaas/)
 # select SBH method, upload nucleotide query
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1692233160&key=4bmRmWhX # O. faveolata (Young)
-https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1672974031&key=SQHqJU5a # Durusdinium (Shoguchi)
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1727803121&key=MaNOeqP6 # O. faveolata (Young)
+https://www.genome.jp/kaas-bin/kaas_main?mode=user&id=1727803452&key=E12GTnNw # Durusdinium (Shoguchi)
 
 # once it is done, download to HPC - it is named query.ko by default
-wget https://www.genome.jp/tools/kaas/files/dl/1692233160/query.ko # O. faveolata (Young)
-wget https://www.genome.jp/tools/kaas/files/dl/1672974031/query.ko # Durusdinium (Shoguchi)
+wget https://www.genome.jp/tools/kaas/files/dl/1727803121/query.ko # O. faveolata (Young)
+wget https://www.genome.jp/tools/kaas/files/dl/1727803452/query.ko # Durusdinium (Shoguchi)
 
 # selecting only the lines with non-missing annotation:
 cat query.ko | awk '{if ($2!="") print }' > Ofaveolata_iso2kegg.tab
@@ -267,4 +263,4 @@ cat query.ko | awk '{if ($2!="") print }' > Durusdinium_iso2kegg.tab
 
 # copy all files to local machine
 cd /path/to/local/directory
-scp mstudiva@koko-login.fau.edu:~/path/to/HPC/directory/\* .
+scp mstudiva@koko-login.hpc.fau.edu:~/path/to/HPC/directory/\* .

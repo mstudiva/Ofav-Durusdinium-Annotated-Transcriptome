@@ -484,7 +484,7 @@ Durusdinium1292	Translation, ribosomal structure and biogenesis
 Durusdinium10274	Inorganic ion transport and metabolism
 Durusdinium24252	
 Durusdinium24579	Carbohydrate transport and metabolism
-Durusdinium16665	Replication, recombination and repair
+Durusdinium16665	Translation, ribosomal structure and biogenesis
 Durusdinium9785	Posttranslational modification, protein turnover, chaperones
 Durusdinium41191	Energy production and conversion
 Durusdinium33762	Intracellular trafficking, secretion, and vesicular transport
@@ -513,6 +513,7 @@ Durusdinium29782	Signal transduction mechanisms
 Durusdinium52777	Translation, ribosomal structure and biogenesis
 Durusdinium35234	Secondary metabolites biosynthesis, transport and catabolism
 Durusdinium16705	Amino acid transport and metabolism
+Durusdinium17564	Carbohydrate transport and metabolism
 Durusdinium34437	Translation, ribosomal structure and biogenesis
 Durusdinium26137	Cytoskeleton
 Durusdinium28030	Amino acid transport and metabolism
@@ -999,6 +1000,7 @@ Durusdinium38988	Coenzyme transport and metabolism
 Durusdinium52650	RNA processing and modification
 Durusdinium43291	RNA processing and modification
 Durusdinium25166	Translation, ribosomal structure and biogenesis
+Durusdinium33842	Inorganic ion transport and metabolism
 Durusdinium32917	Signal transduction mechanisms
 Durusdinium9367	Posttranslational modification, protein turnover, chaperones
 Durusdinium55818	Posttranslational modification, protein turnover, chaperones
@@ -1459,7 +1461,6 @@ Durusdinium27919	Cell cycle control, cell division, chromosome partitioning
 Durusdinium28058	Amino acid transport and metabolism
 Durusdinium40743	Carbohydrate transport and metabolism
 Durusdinium39178	Energy production and conversion
-Durusdinium38035	Carbohydrate transport and metabolism
 Durusdinium44195	Translation, ribosomal structure and biogenesis
 Durusdinium379	
 Durusdinium41035	Carbohydrate transport and metabolism
@@ -2303,6 +2304,7 @@ Durusdinium25706	Posttranslational modification, protein turnover, chaperones
 Durusdinium52239	Transcription
 Durusdinium23958	Lipid transport and metabolism
 Durusdinium21807	Posttranslational modification, protein turnover, chaperones
+Durusdinium37703	
 Durusdinium52095	Signal transduction mechanisms
 Durusdinium43715	Translation, ribosomal structure and biogenesis
 Durusdinium856	Posttranslational modification, protein turnover, chaperones
@@ -2518,7 +2520,6 @@ Durusdinium31299	RNA processing and modification
 Durusdinium38028	Inorganic ion transport and metabolism
 Durusdinium19636	RNA processing and modification
 Durusdinium37904	Posttranslational modification, protein turnover, chaperones
-Durusdinium39112	
 Durusdinium23424	Signal transduction mechanisms
 Durusdinium46071	
 Durusdinium10507	Signal transduction mechanisms
@@ -2838,7 +2839,6 @@ Durusdinium17293	Carbohydrate transport and metabolism
 Durusdinium37008	Translation, ribosomal structure and biogenesis
 Durusdinium34996	Lipid transport and metabolism
 Durusdinium34105	Lipid transport and metabolism
-Durusdinium35187	
 Durusdinium28895	Energy production and conversion
 Durusdinium7167	Amino acid transport and metabolism
 Durusdinium18745	
@@ -2921,6 +2921,7 @@ Durusdinium54976	Signal transduction mechanisms
 Durusdinium40490	Amino acid transport and metabolism
 Durusdinium33698	Posttranslational modification, protein turnover, chaperones
 Durusdinium23960	Energy production and conversion
+Durusdinium40442	Inorganic ion transport and metabolism
 Durusdinium25545	Energy production and conversion
 Durusdinium35735	Replication, recombination and repair
 Durusdinium38913	Cytoskeleton
@@ -3071,6 +3072,7 @@ Durusdinium29804	Signal transduction mechanisms
 Durusdinium16333	
 Durusdinium46855	Secondary metabolites biosynthesis, transport and catabolism
 Durusdinium35821	Secondary metabolites biosynthesis, transport and catabolism
+Durusdinium55497	Energy production and conversion
 Durusdinium11332	Posttranslational modification, protein turnover, chaperones
 Durusdinium13946	Lipid transport and metabolism
 Durusdinium40220	Amino acid transport and metabolism
@@ -3650,7 +3652,6 @@ Durusdinium28908	Signal transduction mechanisms
 Durusdinium10201	Transcription
 Durusdinium36747	Signal transduction mechanisms
 Durusdinium54415	Lipid transport and metabolism
-Durusdinium39117	Nucleotide transport and metabolism
 Durusdinium21261	Energy production and conversion
 Durusdinium19778	Translation, ribosomal structure and biogenesis
 Durusdinium28915	Translation, ribosomal structure and biogenesis
@@ -4306,7 +4307,6 @@ Durusdinium55006	Carbohydrate transport and metabolism
 Durusdinium30076	Chromatin structure and dynamics
 Durusdinium35448	
 Durusdinium18337	Translation, ribosomal structure and biogenesis
-Durusdinium36753	Posttranslational modification, protein turnover, chaperones
 Durusdinium34422	Signal transduction mechanisms
 Durusdinium45897	Inorganic ion transport and metabolism
 Durusdinium32017	Cytoskeleton
@@ -4486,6 +4486,7 @@ Durusdinium24463	Signal transduction mechanisms
 Durusdinium29722	Posttranslational modification, protein turnover, chaperones
 Durusdinium28275	Cytoskeleton
 Durusdinium30847	Signal transduction mechanisms
+Durusdinium11258	Signal transduction mechanisms
 Durusdinium41231	Nucleotide transport and metabolism
 Durusdinium54265	Intracellular trafficking, secretion, and vesicular transport
 Durusdinium50040	Translation, ribosomal structure and biogenesis
@@ -4594,7 +4595,7 @@ Durusdinium39667	Translation, ribosomal structure and biogenesis
 Durusdinium10921	Inorganic ion transport and metabolism
 Durusdinium47172	Signal transduction mechanisms
 Durusdinium18115	Cell cycle control, cell division, chromosome partitioning
-Durusdinium4740	Carbohydrate transport and metabolism
+Durusdinium4740	
 Durusdinium18328	Amino acid transport and metabolism
 Durusdinium27028	Signal transduction mechanisms
 Durusdinium28296	Replication, recombination and repair
@@ -4688,6 +4689,7 @@ Durusdinium52468	Nucleotide transport and metabolism
 Durusdinium13476	Energy production and conversion
 Durusdinium7976	Replication, recombination and repair
 Durusdinium37708	Carbohydrate transport and metabolism
+Durusdinium33013	Carbohydrate transport and metabolism
 Durusdinium39085	Carbohydrate transport and metabolism
 Durusdinium35710	Posttranslational modification, protein turnover, chaperones
 Durusdinium33067	Carbohydrate transport and metabolism
@@ -5446,8 +5448,9 @@ Durusdinium36017	Nucleotide transport and metabolism
 Durusdinium30936	Nucleotide transport and metabolism
 Durusdinium47704	Posttranslational modification, protein turnover, chaperones
 Durusdinium46283	Signal transduction mechanisms
-Durusdinium7871	Defense mechanisms
+Durusdinium7871	Secondary metabolites biosynthesis, transport and catabolism
 Durusdinium4840	Cell cycle control, cell division, chromosome partitioning
+Durusdinium3684	Amino acid transport and metabolism
 Durusdinium32708	
 Durusdinium476	Translation, ribosomal structure and biogenesis
 Durusdinium46487	Posttranslational modification, protein turnover, chaperones
@@ -5879,7 +5882,7 @@ Durusdinium25192	Cell cycle control, cell division, chromosome partitioning
 Durusdinium22104	Translation, ribosomal structure and biogenesis
 Durusdinium24739	Replication, recombination and repair
 Durusdinium27455	Coenzyme transport and metabolism
-Durusdinium40111	
+Durusdinium40111	Defense mechanisms
 Durusdinium39626	Intracellular trafficking, secretion, and vesicular transport
 Durusdinium39791	Translation, ribosomal structure and biogenesis
 Durusdinium36205	Amino acid transport and metabolism
@@ -6232,7 +6235,6 @@ Durusdinium17987	Signal transduction mechanisms
 Durusdinium8630	Intracellular trafficking, secretion, and vesicular transport
 Durusdinium39724	Translation, ribosomal structure and biogenesis
 Durusdinium17958	Energy production and conversion
-Durusdinium4947	RNA processing and modification
 Durusdinium38588	Energy production and conversion
 Durusdinium9881	Posttranslational modification, protein turnover, chaperones
 Durusdinium33675	Inorganic ion transport and metabolism
@@ -6785,6 +6787,7 @@ Durusdinium49209	Carbohydrate transport and metabolism
 Durusdinium24018	Signal transduction mechanisms
 Durusdinium40325	Secondary metabolites biosynthesis, transport and catabolism
 Durusdinium2070	Signal transduction mechanisms
+Durusdinium34721	Transcription
 Durusdinium12338	Energy production and conversion
 Durusdinium30649	Signal transduction mechanisms
 Durusdinium31755	Energy production and conversion
@@ -7199,6 +7202,7 @@ Durusdinium24836	Inorganic ion transport and metabolism
 Durusdinium10919	Signal transduction mechanisms
 Durusdinium26628	Carbohydrate transport and metabolism
 Durusdinium38201	Signal transduction mechanisms
+Durusdinium53439	
 Durusdinium41708	Signal transduction mechanisms
 Durusdinium28337	Nucleotide transport and metabolism
 Durusdinium32964	Lipid transport and metabolism

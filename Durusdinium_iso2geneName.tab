@@ -571,7 +571,7 @@ Durusdinium10274	Sulfate permease and related transporters (MFS superfamily)
 Durusdinium24252	Calcium-binding protein
 Durusdinium47552	Surfeit locus protein 2 (SURF2)
 Durusdinium24579	Fucosyltransferase activity. It is involved in the biological process described with protein glycosylation
-Durusdinium16665	phosphate ion transport
+Durusdinium16665	pseudouridine synthase activity
 Durusdinium9785	Peptidyl-prolyl cis-trans isomerase
 Durusdinium41191	Low-potential cytochrome c that plays a role in the oxygen-evolving complex of photosystem II
 Durusdinium33762	Involved in the retrieval of endoplasmic reticulum membrane proteins from the early Golgi compartment
@@ -605,6 +605,7 @@ Durusdinium52777	ribosomal protein L13
 Durusdinium35234	FAD-dependent oxidoreductase
 Durusdinium16705	serine-type peptidase activity
 Durusdinium40095	Metallo-beta-lactamase superfamily
+Durusdinium17564	Sugar (and other) transporter
 Durusdinium34437	Specifically methylates the cytosine at position 1407 (m5C1407) of 16S rRNA
 Durusdinium26137	Microfibril-associated/Pre-mRNA processing
 Durusdinium28030	cysteine desulfurase activity
@@ -1193,6 +1194,7 @@ Durusdinium38988	Catalytic subunit of the tRNA-splicing ligase complex that acts
 Durusdinium52650	U2 snRNP auxiliary factor small
 Durusdinium43291	Cwf15/Cwc15 cell cycle control protein
 Durusdinium25166	Belongs to the class-I aminoacyl-tRNA synthetase family
+Durusdinium33842	Flavin-binding monooxygenase-like
 Durusdinium32351	ABC transporter
 Durusdinium32917	adenylate cyclase-activating adrenergic receptor signaling pathway involved in positive regulation of heart rate
 Durusdinium9367	FKBP-type peptidyl-prolyl cis-trans isomerase
@@ -1482,6 +1484,7 @@ Durusdinium37986	polypeptide N-acetylgalactosaminyltransferase activity
 Durusdinium42167	protein kinase activity
 Durusdinium41025	chaperone
 Durusdinium19001	Protein kinase domain
+Durusdinium49260	Interferon-inducible GTPase
 Durusdinium42299	Belongs to the yippee family
 Durusdinium34295	microtubule motor activity
 Durusdinium30626	RNA recognition motif 2
@@ -1689,7 +1692,7 @@ Durusdinium26570	1-acyl-sn-glycerol-3-phosphate acyltransferase
 Durusdinium30002	oxidation-reduction process
 Durusdinium26011	sequence-specific DNA binding transcription factor activity
 Durusdinium25017	Cellulase (glycosyl hydrolase family 5)
-Durusdinium15408	Belongs to the Ca(2 ) cation antiporter (CaCA) (TC 2.A.19) family
+Durusdinium15408	ion antiporter activity involved in regulation of postsynaptic membrane potential
 Durusdinium16170	Belongs to the multicopper oxidase family
 Durusdinium52044	Protein tyrosine kinase
 Durusdinium53440	Seems to be required for maximal rate of protein biosynthesis. Enhances ribosome dissociation into subunits and stabilizes the binding of the initiator Met-tRNA(I) to 40 S ribosomal subunits
@@ -1747,7 +1750,6 @@ Durusdinium40743	beta-galactosidase
 Durusdinium6852	octopamine biosynthetic process
 Durusdinium25815	ADP-ribosylglycohydrolase
 Durusdinium39178	ATP:guanido phosphotransferase, N-terminal domain
-Durusdinium38035	Belongs to the glycosyl hydrolase 2 family
 Durusdinium44195	Belongs to the bacterial ribosomal protein bL20 family
 Durusdinium379	phosphatidylinositol-3,5-bisphosphate 3-phosphatase activity
 Durusdinium41035	Belongs to the RuBisCO large chain family
@@ -2733,6 +2735,7 @@ Durusdinium25706	peptidyl-prolyl cis-trans isomerase activity
 Durusdinium52239	NAD-dependent histone deacetylase activity (H3-K18 specific)
 Durusdinium23958	Lipase (class 3)
 Durusdinium21807	Peptidyl-prolyl cis-trans isomerase
+Durusdinium37703	photosynthesis
 Durusdinium52095	phosphatase
 Durusdinium43715	Elongation factor Tu GTP binding domain
 Durusdinium856	E3 ubiquitin-protein ligase
@@ -2975,7 +2978,7 @@ Durusdinium31299	SpoU rRNA Methylase family
 Durusdinium38028	riboflavin transmembrane transporter activity
 Durusdinium19636	Small nuclear ribonucleoprotein
 Durusdinium37904	Ubiquitin carboxyl-terminal hydrolase 47
-Durusdinium39112	oxidation-reduction process
+Durusdinium39112	protein conserved in bacteria
 Durusdinium23424	Calcium calmodulin-dependent protein kinase
 Durusdinium46071	Protein tyrosine kinase
 Durusdinium10507	Belongs to the protein kinase superfamily
@@ -3092,6 +3095,7 @@ Durusdinium23980	Belongs to the cytochrome b5 family
 Durusdinium49453	Belongs to the MIP aquaporin (TC 1.A.8) family
 Durusdinium27110	Belongs to the globin family
 Durusdinium29032	dephospho-CoA kinase
+Durusdinium28868	Phytanoyl-CoA dioxygenase (PhyH)
 Durusdinium11821	flagellar associated protein. Source PGD
 Durusdinium33424	glutathione S-conjugate-transporting ATPase activity
 Durusdinium7650	Core component of nucleosome. Nucleosomes wrap and compact DNA into chromatin, limiting DNA accessibility to the cellular machineries which require DNA as a template. Histones thereby play a central role in transcription regulation, DNA repair, DNA replication and chromosomal stability. DNA accessibility is regulated via a complex set of post-translational modifications of histones, also called histone code, and nucleosome remodeling
@@ -3359,14 +3363,12 @@ Durusdinium43171	poly(U) RNA binding
 Durusdinium24818	isomerase activity
 Durusdinium34996	Acetyl-coenzyme A synthetase N-terminus
 Durusdinium34105	Thioesterase-like superfamily
-Durusdinium35187	-
 Durusdinium3744	Belongs to the TUB family
 Durusdinium28895	Wyosine base formation
 Durusdinium7167	acid phosphatase activity
 Durusdinium23821	SET domain-containing protein
 Durusdinium18745	Sec63 Brl domain
 Durusdinium36319	CCR4-NOT transcription complex subunit 7. Source PGD
-Durusdinium29634	Spizellomyces punctatus DAOM BR117
 Durusdinium31113	Produces ATP from ADP in the presence of a proton gradient across the membrane
 Durusdinium45922	Belongs to the bacterial ribosomal protein bL27 family
 Durusdinium17074	cell division
@@ -3454,6 +3456,7 @@ Durusdinium20399	protein polyglycylation
 Durusdinium40490	Peroxidase
 Durusdinium33698	tpr repeat protein
 Durusdinium23960	2OG-Fe(II) oxygenase superfamily
+Durusdinium40442	TrkH-domain-containing protein
 Durusdinium25545	Subunit of the peripheral V1 complex of vacuolar ATPase essential for assembly or catalytic function. V-ATPase is responsible for acidifying a variety of intracellular compartments in eukaryotic cells
 Durusdinium35735	ERCC4 domain
 Durusdinium38913	Myosin. Large ATPases.
@@ -3471,7 +3474,7 @@ Durusdinium12608	structural constituent of ribosome
 Durusdinium41318	Carbamoyltransferase
 Durusdinium33933	Diphthamide biosynthesis protein 7
 Durusdinium15970	essential for photochemical activity. FB is the terminal electron acceptor of PSI, donating electrons to ferredoxin. The C-terminus interacts with PsaA B D and helps assemble the protein into the PSI complex. Required for binding of PsaD and PsaE to PSI. PSI is a plastocyanin cytochrome c6- ferredoxin oxidoreductase, converting photonic excitation into a charge separation, which transfers an electron from the donor P700 chlorophyll pair to the spectroscopically characterized acceptors A0, A1, FX, FA and FB in turn
-Durusdinium31669	Ubiquitin-2 like Rad60 SUMO-like
+Durusdinium31669	Ubiquitin-like domain
 Durusdinium48966	alpha-1,3-mannosylglycoprotein 2-beta-N-acetylglucosaminyltransferase activity
 Durusdinium10686	Belongs to the SKP1 family
 Durusdinium38317	LicD family
@@ -3639,6 +3642,7 @@ Durusdinium29804	Protein kinase domain
 Durusdinium16333	glycosyl
 Durusdinium46855	protein-arginine omega-N asymmetric methyltransferase activity
 Durusdinium35821	positive regulation of homocysteine metabolic process
+Durusdinium55497	Mitochondrial carrier protein
 Durusdinium11332	calcium-dependent cysteine-type endopeptidase activity
 Durusdinium15202	Peptide methionine sulfoxide reductase
 Durusdinium13946	Cytochrome b5-like Heme/Steroid binding domain
@@ -3685,7 +3689,7 @@ Durusdinium8714	SMP-30/Gluconolaconase/LRE-like region
 Durusdinium6699	glutathione gamma-glutamylcysteinyltransferase activity
 Durusdinium39016	electron transfer activity
 Durusdinium12991	Iron-containing alcohol dehydrogenase
-Durusdinium36625	serine threonine protein kinase
+Durusdinium36625	protein kinase activity
 Durusdinium45937	Phytochelatin synthase
 Durusdinium41232	Glyoxalase/Bleomycin resistance protein/Dioxygenase superfamily
 Durusdinium15373	Serine threonine protein kinase
@@ -3954,6 +3958,7 @@ Durusdinium37271	Mitochondrial carrier protein
 Durusdinium577	SET (Su(var)3-9, Enhancer-of-zeste, Trithorax) domain
 Durusdinium27464	GDP-fucose protein O-fucosyltransferase
 Durusdinium11694	Source PGD
+Durusdinium12658	Haem-degrading
 Durusdinium606	fucoxanthin chlorophyll a c protein
 Durusdinium19804	negative regulation of ER-associated ubiquitin-dependent protein catabolic process
 Durusdinium30745	transferase activity, transferring hexosyl groups
@@ -4333,7 +4338,7 @@ Durusdinium28908	PH domain
 Durusdinium10201	'Cold-shock' DNA-binding domain
 Durusdinium36747	Protein kinase C terminal domain
 Durusdinium54415	Belongs to the enoyl-CoA hydratase isomerase family
-Durusdinium39117	5'-nucleotidase, C-terminal domain
+Durusdinium39117	Protein of unknown function (DUF521)
 Durusdinium21261	to Saccharomyces cerevisiae KGD2 (YDR148C)
 Durusdinium39454	GTPase activity
 Durusdinium19778	oxidoreductase activity
@@ -5129,7 +5134,7 @@ Durusdinium49163	calcium-dependent cysteine-type endopeptidase activity
 Durusdinium23342	Specifically deglycosylates the denatured form of N- linked glycoproteins in the cytoplasm and assists their proteasome-mediated degradation. Cleaves the beta-aspartyl- glucosamine (GlcNAc) of the glycan and the amide side chain of Asn, converting Asn to Asp. Prefers proteins containing high- mannose over those bearing complex type oligosaccharides. Can recognize misfolded proteins in the endoplasmic reticulum that are exported to the cytosol to be destroyed and deglycosylate them, while it has no activity toward native proteins. Deglycosylation is a prerequisite for subsequent proteasome-mediated degradation of some, but not all, misfolded glycoproteins
 Durusdinium48953	phosphatase 2C
 Durusdinium10367	Functions as component of the Arp2 3 complex which is involved in regulation of actin polymerization and together with an activating nucleation-promoting factor (NPF) mediates the formation of branched actin networks
-Durusdinium52837	Source PGD
+Durusdinium52837	Belongs to the peptidase C2 family
 Durusdinium41925	short chain dehydrogenase reductase family
 Durusdinium41631	Calcium-binding protein
 Durusdinium18669	isomerase D
@@ -5318,6 +5323,7 @@ Durusdinium24463	serine threonine-protein phosphatase
 Durusdinium29722	peptidyl-prolyl cis-trans isomerase activity
 Durusdinium28275	microtubule motor activity
 Durusdinium30847	SMART Adenylyl cyclase class-3 4 guanylyl cyclase
+Durusdinium11258	EF-hand domain
 Durusdinium41231	ATP-grasp domain
 Durusdinium54265	exonuclease activity
 Durusdinium22634	Haloacid dehalogenase-like hydrolase
@@ -5449,7 +5455,7 @@ Durusdinium39667	Pseudouridine synthase, RluA family
 Durusdinium10921	potassium ion transmembrane transporter activity
 Durusdinium47172	Motif C-terminal to PAS motifs (likely to contribute to PAS structural domain)
 Durusdinium18115	intracellular chloride channel activity
-Durusdinium4740	protein serine/threonine kinase activity
+Durusdinium4740	serine threonine protein kinase
 Durusdinium35182	Ribosomal protein L11 methyltransferase (PrmA)
 Durusdinium18328	Biotinidase
 Durusdinium27028	Specifically deglycosylates the denatured form of N- linked glycoproteins in the cytoplasm and assists their proteasome-mediated degradation. Cleaves the beta-aspartyl- glucosamine (GlcNAc) of the glycan and the amide side chain of Asn, converting Asn to Asp. Prefers proteins containing high- mannose over those bearing complex type oligosaccharides. Can recognize misfolded proteins in the endoplasmic reticulum that are exported to the cytosol to be destroyed and deglycosylate them, while it has no activity toward native proteins. Deglycosylation is a prerequisite for subsequent proteasome-mediated degradation of some, but not all, misfolded glycoproteins
@@ -5566,6 +5572,7 @@ Durusdinium11024	Chlamydia CHLPS protein (DUF818)
 Durusdinium13476	Cytochrome C oxidase assembly
 Durusdinium7976	nuclear-transcribed mRNA catabolic process, nonsense-mediated decay
 Durusdinium37708	Alpha-glucan water dikinase
+Durusdinium33013	Lipase (class 3)
 Durusdinium39085	Carboxylesterase family
 Durusdinium35710	regulation of endocannabinoid signaling pathway
 Durusdinium33067	triose-phosphate isomerase activity
@@ -6441,6 +6448,7 @@ Durusdinium47704	Peptide methionine sulfoxide reductase
 Durusdinium46283	protein maturation by iron-sulfur cluster transfer
 Durusdinium7871	Isochorismatase family
 Durusdinium4840	RNA recognition motif 2
+Durusdinium3684	COG0665 Glycine D-amino acid oxidases (deaminating)
 Durusdinium32708	Belongs to the class I-like SAM-binding methyltransferase superfamily. Protein arginine N- methyltransferase family
 Durusdinium44014	carnosine N-methyltransferase activity
 Durusdinium476	translation initiation inhibitor, yjgF family
@@ -6483,7 +6491,7 @@ Durusdinium28686	Belongs to the ubiquitin-conjugating enzyme family
 Durusdinium236	tyrosine-tRNA ligase activity
 Durusdinium28684	steroid binding
 Durusdinium43313	RNA-binding protein mei2 homologue
-Durusdinium32069	Mitochondrial sodium hydrogen exchanger
+Durusdinium32069	Solute carrier family 9
 Durusdinium7349	heat shock protein DnaJ
 Durusdinium31703	acid phosphatase activity
 Durusdinium17791	ribosomal large subunit assembly
@@ -6948,7 +6956,7 @@ Durusdinium22104	seryl-tRNA synthetase
 Durusdinium24739	Bifunctional DNA N-glycosylase with associated apurinic apyrimidinic (AP) lyase function that catalyzes the first step in base excision repair (BER), the primary repair pathway for the repair of oxidative DNA damage. The DNA N-glycosylase activity releases the damaged DNA base from DNA by cleaving the N- glycosidic bond, leaving an AP site. The AP lyase activity cleaves the phosphodiester bond 3' to the AP site by a beta-elimination. Primarily recognizes and repairs oxidative base damage of pyrimidines
 Durusdinium25403	digalactosyldiacylglycerol synthase activity
 Durusdinium27455	Belongs to the glutamyl-tRNA reductase family
-Durusdinium40111	dihydrokaempferol 4-reductase activity
+Durusdinium40111	methylglyoxal reductase (NADPH-dependent) activity
 Durusdinium39626	Ras-related protein
 Durusdinium39791	S-adenosylmethionine-dependent tRNA (m5U54) methyltransferase activity
 Durusdinium36205	2OG-Fe(II) oxygenase family protein
@@ -7364,7 +7372,6 @@ Durusdinium17987	Cyclic nucleotide-binding domain
 Durusdinium8630	glucose import
 Durusdinium39724	GTPase of unknown function C-terminal
 Durusdinium17958	fatty acid beta-oxidation using acyl-CoA dehydrogenase
-Durusdinium4947	Centrosomal protein
 Durusdinium38588	xanthine catabolic process
 Durusdinium9881	Peptidyl-prolyl cis-trans isomerase
 Durusdinium33675	Flavoprotein involved in K transport
@@ -7504,7 +7511,7 @@ Durusdinium31539	Acyltransferase-like protein At1g54570
 Durusdinium4080	acid phosphatase activity
 Durusdinium43273	elongation factor Tu
 Durusdinium45845	Protein of unknown function (DUF2009)
-Durusdinium18076	Domain of unknown function (DUF4201)
+Durusdinium18076	Source PGD
 Durusdinium28824	Methyltransferase domain
 Durusdinium22226	dUTP diphosphatase activity. It is involved in the biological process described with dUTP metabolic process
 Durusdinium22344	Sodium/hydrogen exchanger family
@@ -7566,7 +7573,7 @@ Durusdinium19022	procollagen-proline 4-dioxygenase activity
 Durusdinium3373	RNA-binding protein mei2 homologue
 Durusdinium7726	Belongs to the class-I aminoacyl-tRNA synthetase family
 Durusdinium32870	Solute carrier family 44 member
-Durusdinium40605	calcium-transporting ATPase activity
+Durusdinium40605	cation transport ATPase
 Durusdinium32026	glutathione transferase activity
 Durusdinium43369	Belongs to the MIP aquaporin (TC 1.A.8) family
 Durusdinium17121	Beta-1,4-galactosyltransferase 6
@@ -8005,6 +8012,7 @@ Durusdinium40325	retinol dehydrogenase
 Durusdinium54832	PRP38 family
 Durusdinium2070	protein serine/threonine kinase activity
 Durusdinium10223	Serine aminopeptidase, S33
+Durusdinium34721	Acetyltransferase (GNAT) family
 Durusdinium12338	oxidoreductase activity, acting on the CH-OH group of donors, quinone or similar compound as acceptor
 Durusdinium30649	protein serine threonine kinase activity. It is involved in the biological process described with protein phosphorylation
 Durusdinium26028	purine nucleobase transmembrane transporter activity
@@ -8497,6 +8505,7 @@ Durusdinium24836	PFAM Sodium hydrogen exchanger family
 Durusdinium10919	Mitochondrial branched-chain alpha-ketoacid dehydrogenase kinase
 Durusdinium26628	Catalyzes the dehydration of the S-form of NAD(P)HX at the expense of ATP, which is converted to ADP. Together with NAD(P)HX epimerase, which catalyzes the epimerization of the S- and R-forms, the enzyme allows the repair of both epimers of NAD(P)HX, a damaged form of NAD(P)H that is a result of enzymatic or heat-dependent hydration
 Durusdinium38201	Adenylyl cyclase class-3 4 guanylyl cyclase
+Durusdinium53439	-
 Durusdinium52315	intraciliary retrograde transport
 Durusdinium41708	Branched chain ketoacid dehydrogenase kinase
 Durusdinium4500	Sugar transport protein
@@ -8507,7 +8516,7 @@ Durusdinium51888	rRNA processing
 Durusdinium33865	Belongs to the CDS family
 Durusdinium32223	Alpha amylase, C-terminal all-beta domain
 Durusdinium41450	snRNP Sm proteins
-Durusdinium41239	D-alanine [D-alanyl carrier protein] ligase activity
+Durusdinium41239	Non-ribosomal peptide synthetase modules and related proteins
 Durusdinium32622	DNA-dependent RNA polymerase catalyzes the transcription of DNA into RNA using the four ribonucleoside triphosphates as substrates
 Durusdinium38375	Belongs to the TRAFAC class myosin-kinesin ATPase superfamily. Myosin family
 Durusdinium10619	COG0491 Zn-dependent hydrolases, including glyoxylases
@@ -8625,6 +8634,6 @@ Durusdinium24037	glutathione transferase activity
 Durusdinium8307	cell redox homeostasis
 Durusdinium21096	OTU-like cysteine protease
 Durusdinium54360	Belongs to the glycosyl hydrolase 31 family
-## 8627 queries scanned	
-## Total time (seconds): 91.29887366294861	
-## Rate: 94.49 q/s	
+## 8636 queries scanned	
+## Total time (seconds): 88.54658269882202	
+## Rate: 97.53 q/s	
